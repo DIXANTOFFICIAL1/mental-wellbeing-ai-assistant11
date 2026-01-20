@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Well-Being Report</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<div class="container">
+
+    <h2>📊 Mental Well-Being Report</h2>
+
+    <div class="badge {{ result.color }}">
+        {{ result.level }}
+    </div>
+
+    <div class="progress-container">
+        <div class="progress-bar {{ result.color }}"
+             style="width: {{ result.score }}%;">
+        </div>
+    </div>
+
+    <p><b>Stress Score:</b> {{ result.score }}/100</p>
+
+    <h3>🧠 AI Explanation</h3>
+    <p>{{ result.reasoning }}</p>
+
+    <h3>📅 Suggested Daily Action Plan</h3>
+    <ul>
+        <li><b>Morning:</b> {{ result.plan.morning }}</li>
+        <li><b>Afternoon:</b> {{ result.plan.afternoon }}</li>
+        <li><b>Evening:</b> {{ result.plan.evening }}</li>
+    </ul>
+
+    <h3>✅ Wellness Tips</h3>
+    <ul>
+        {% for tip in result.tips %}
+        <li>{{ tip }}</li>
+        {% endfor %}
+    </ul>
+
+    <p class="disclaimer">
+        ⚠ This AI provides awareness support only. Not medical advice.
+    </p>
+
+    <a href="/">⬅ Start Again</a>
+</div>
+</body>
+</html>

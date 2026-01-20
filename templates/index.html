@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mental Well-Being AI</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<div class="container">
+    <h1>🧠 Mental Well-Being AI Assistant</h1>
+    <p class="subtitle">AI-powered wellness support (non-medical)</p>
+
+    <form action="/" method="POST">
+        <label for="mood">Your current mood</label>
+        <select name="mood" id="mood" required>
+            <option value="Happy">😊 Happy</option>
+            <option value="Neutral">😐 Neutral</option>
+            <option value="Stressed">😟 Stressed</option>
+        </select>
+
+        <label for="feeling">How are you feeling today?</label>
+        <textarea
+            id="feeling"
+            name="feeling"
+            placeholder="Share your thoughts..."
+            required></textarea>
+
+        <button type="submit">Analyze Well-Being</button>
+    </form>
+</div>
+</body>
+</html>
