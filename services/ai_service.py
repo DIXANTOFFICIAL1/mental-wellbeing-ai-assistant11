@@ -74,6 +74,7 @@ def rule_based_fallback(mood, text):
     stress_score = 25
 
     if any(word in text_lower for word in ["worried", "anxious", "pressure", "overwhelmed"]):
+        
         stress_score = 55
 
     if any(word in text_lower for word in ["exhausted", "burnout", "panic", "hopeless", "depressed"]):
