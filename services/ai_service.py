@@ -7,11 +7,11 @@ import google.generativeai as genai
 load_dotenv()
 
 genai.configure(api_key=os.getenv("GOOGLE_API_KEY"))
-
 model = genai.GenerativeModel("models/text-bison-001")
 
 def extract_json(text):
     """
+    
     Extract JSON object safely from AI response
     """
     match = re.search(r"\{[\s\S]*\}", text)
